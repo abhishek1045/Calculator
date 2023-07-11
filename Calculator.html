@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    *{
+        padding: 0;
+        padding-right: 30px;
+        font-family:fantasy;
+    }
+    body{
+        display : grid;
+        height : 100vh;
+        place-items : right;
+        
+    }
+    .main{
+        width: 400px;
+        height: 450px;
+        position: absolute;
+        border: 5px sloid black;
+        border-radius:20px;
+        margin-left: 830px;
+        margin-top: 150px;
+
+    }
+    .main input[type='text'] {
+        width: 88%;
+        position: relative;
+        height: 80px;
+        top: 5px;
+        text-align: right;
+        padding: 7px 6px;
+        outline: none;
+        font-size: 40px;
+        border: 5px solid rgb(195, 247, 7);
+        display: flex;
+        margin: auto;
+        border-radius: 15px;
+        color: black;
+    }
+    .btn input[type='button'] { 
+       width:90px;
+       padding: 5px;
+       margin: 2px 0px;
+       position: relative;
+       left: 13px;
+       top: 20px;
+       height: 60px;
+       cursor: pointer;
+       font-size: 25px;
+       transition: 0.5s;
+       background-color: #b4e71a;
+       border-radius: 20px;
+       color: rgb(12, 6, 6);
+    }
+    .btn input[type='button']:hover{
+       background-color: rgb(14, 14, 14);
+
+   }
+   /* #mul{
+    font-size: 20px;
+   } */
+    </style>
+</head>
+<body background="https://akm-img-a-in.tosshub.com/sites/visualstory/stories/2022_12/story_15848/assets/1.jpeg?time=1671685200" >
+    <div class="main" >
+        <input type="text" id="res">
+        <div class="btn">
+    <input type="button"  value="C" onclick="Clear()">
+    <input type="button"  value="<-" onclick="Back()">
+    <input type="button"  value="%" onclick="solve('%')">
+    <input type="button"  value="*" onclick="solve('*')" id="mul">
+    <br>
+    <input type="button"  value="7" onclick="solve('7')">
+    <input type="button"  value="8" onclick="solve('8')">
+    <input type="button"  value="9" onclick="solve('9')">
+    <input type="button"  value="-" onclick="solve('-')"id='mul'>
+    <br>
+    <input type="button"  value="6" onclick="solve('6')">
+    <input type="button"  value="5" onclick="solve('5')">
+    <input type="button"  value="4" onclick="solve('4')">
+    <input type="button"  value="+" onclick="solve('+')">
+    <br>
+    <input type="button"  value="1" onclick="solve('1')">
+    <input type="button"  value="2" onclick="solve('2')">
+    <input type="button"  value="3" onclick="solve('3')">
+    <input type="button"  value="/" onclick="solve('/')">
+    <br>
+    <input type="button" value="00" onclick="solve('00')">
+    <input type="button" value="0" onclick="solve('0')">
+    <input type="button" value="." onclick="solve('.')">
+    <input type="button" value="=" onclick="Result()">
+        </div>
+    </div>
+
+    <script>
+        // To display values
+        function solve(val){
+            let v = document.getElementById('res').value +=val
+        }
+        function Result(){
+            let exp1= document.getElementById('res').value
+            let num =eval(exp1)
+            document.getElementById('res').value=num
+        }
+        function Back(){
+            let ev=document.getElementById('res')
+            ev.value = ev.value.slice(0,-1)
+        }
+        function Clear(){
+            let inp = document.getElementById('res').value= ''
+        }
+    </script>
+    
+</body>
+</html>
